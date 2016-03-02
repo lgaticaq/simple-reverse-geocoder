@@ -19,10 +19,16 @@ npm i -S simple-reverse-geocoder
 
 [Try on Tonic](https://tonicdev.com/npm/simple-reverse-geocoder)
 ```js
-import meitrack from 'simple-reverse-geocoder'
+import rg from 'simple-reverse-geocoder';
 
-const rg = require('simple-reverse-geocoder');
+const loc = {type: 'Point', coordinates: [-70.5171743, -33.3608387]};
+rg.getAddress(loc).then(console.log); // 'Del Candil 665-701, Lo Barnechea'
 
+// Add redis cache
+import redis from 'redis';
+
+const client = redis.createClient();
+rg.setCache(client);
 const loc = {type: 'Point', coordinates: [-70.5171743, -33.3608387]};
 rg.getAddress(loc).then(console.log); // 'Del Candil 665-701, Lo Barnechea'
 ```

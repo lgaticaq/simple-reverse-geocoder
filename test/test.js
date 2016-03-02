@@ -1,14 +1,19 @@
 'use strict';
 
-import lib from '../lib';
 import {expect} from 'chai';
+import redis from 'redis';
+import rg from '../lib';
 
 describe('simple-reverse-geocoder', () => {
+  before(() => {
+    const client = redis.createClient();
+    rg.setCache(client);
+  });
+
   describe('getAddress', () => {
     it('should return a valid address', (done) => {
       const loc = {type: 'Point', coordinates: [-70.5171743, -33.3608387]};
-      lib.setCache();
-      lib.getAddress(loc).then(data => {
+      rg.getAddress(loc).then(data => {
         expect(data).to.eql('Del Candil 665-701, Lo Barnechea');
         done();
       }).catch(err => {
@@ -17,8 +22,8 @@ describe('simple-reverse-geocoder', () => {
       });
     });
 
-    it('should return a valid address', (done) => {
-      lib.getFromCache(-33.3608387, -70.5171743).then(reply => {
+    it('should return a valid address from cache', (done) => {
+      rg.getFromCache(-33.3608387, -70.5171743).then(reply => {
         expect(reply).to.eql('Del Candil 665-701, Lo Barnechea');
         done();
       }).catch(err => {
@@ -29,6 +34,6 @@ describe('simple-reverse-geocoder', () => {
   });
 
   after(() => {
-    lib.clearCache(-33.3608387, -70.5171743);
+    rg.clearCache(-33.3608387, -70.5171743);
   });
 });

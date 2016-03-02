@@ -1,18 +1,13 @@
 'use strict';
 
-import redisUrl from 'redis-url';
 import nodeGeocoder from 'node-geocoder';
 import Promise from 'bluebird';
 
 let client;
 
-const setCache = (uri) => {
-  try {
-    client = redisUrl.connect(uri);
-    Promise.promisifyAll(Object.getPrototypeOf(client));
-  } catch (err) {
-    throw err;
-  }
+const setCache = (instance) => {
+  client = instance;
+  Promise.promisifyAll(Object.getPrototypeOf(client));
 };
 
 const getReverse = (lat, lng) => {
@@ -64,9 +59,7 @@ const getAddress = (loc) => {
 };
 
 const clearCache = (lat, lng) => {
-  if (client) {
-    client.del(`geocoder:${lat}:${lng}`);
-  }
+  if (client) client.del(`geocoder:${lat}:${lng}`);
 };
 
 module.exports = {

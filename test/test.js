@@ -1,8 +1,8 @@
 'use strict';
 
-import {expect} from 'chai';
-import redis from 'redis';
-import rg from '../lib';
+const expect = require('chai').expect;
+const redis = require('redis');
+const rg = require('../src');
 
 describe('simple-reverse-geocoder', () => {
   before(() => {

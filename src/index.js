@@ -1,11 +1,11 @@
 'use strict';
 
-import nodeGeocoder from 'node-geocoder';
-import Promise from 'bluebird';
+const nodeGeocoder = require('node-geocoder');
+const Promise = require('bluebird');
 
 let client;
 
-const setCache = (instance) => {
+const setCache = instance => {
   client = instance;
   Promise.promisifyAll(Object.getPrototypeOf(client));
 };
@@ -22,10 +22,11 @@ const getReverse = (lat, lng) => {
   });
 };
 
-const getCoordinates = (loc) => {
+const getCoordinates = loc => {
   return new Promise((resolve, reject) => {
     try {
-      const [lng, lat] = loc.coordinates;
+      const lng = loc.coordinates[0];
+      const lat = loc.coordinates[1];
       resolve({lng: lng, lat: lat});
     } catch (err) {
       reject(err);
@@ -39,7 +40,7 @@ const getFromCache = (lat, lng) => {
   });
 };
 
-const getAddress = (loc) => {
+const getAddress = loc => {
   return new Promise((resolve, reject) => {
     getCoordinates(loc).then(({lng, lat}) => {
       if (client) {

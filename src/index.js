@@ -42,7 +42,9 @@ const getFromCache = (lat, lng) => {
 
 const getAddress = loc => {
   return new Promise((resolve, reject) => {
-    getCoordinates(loc).then(({lng, lat}) => {
+    getCoordinates(loc).then(data => {
+      const lng = data.lng;
+      const lat = data.lat;
       if (client) {
         getFromCache(lat, lng).then(reply => {
           if (reply) resolve(reply);

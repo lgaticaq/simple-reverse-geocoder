@@ -7,3 +7,6 @@ notifications:
   email: false
 services:
   - redis-server
+after_success:
+  - npm run coveralls
+  - npm run codeclimate

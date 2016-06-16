@@ -2,12 +2,13 @@
 
 [![npm version](https://img.shields.io/npm/v/simple-reverse-geocoder.svg?style=flat-square)](https://www.npmjs.com/package/simple-reverse-geocoder)
 [![npm downloads](https://img.shields.io/npm/dm/simple-reverse-geocoder.svg?style=flat-square)](https://www.npmjs.com/package/simple-reverse-geocoder)
-[![dependency Status](https://img.shields.io/david/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://david-dm.org/lgaticaq/simple-reverse-geocoder#info=dependencies)
 [![Build Status](https://img.shields.io/travis/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://travis-ci.org/lgaticaq/simple-reverse-geocoder)
+[![Coverage Status](https://img.shields.io/coveralls/lgaticaq/simple-reverse-geocoder/master.svg?style=flat-square)](https://coveralls.io/github/lgaticaq/simple-reverse-geocoder?branch=master)
+[![Code Climate](https://img.shields.io/codeclimate/github/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://codeclimate.com/github/lgaticaq/simple-reverse-geocoder)
+[![dependency Status](https://img.shields.io/david/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://david-dm.org/lgaticaq/simple-reverse-geocoder#info=dependencies)
 [![devDependency Status](https://img.shields.io/david/dev/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://david-dm.org/lgaticaq/simple-reverse-geocoder#info=devDependencies)
-[![Join the chat at https://gitter.im/lgaticaq/simple-reverse-geocoder](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/lgaticaq/simple-reverse-geocoder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Get address from a point
+> Get address from a point
 
 ## Installation
 
@@ -32,3 +33,7 @@ rg.setCache(client);
 const loc = {type: 'Point', coordinates: [-70.5171743, -33.3608387]};
 rg.getAddress(loc).then(console.log); // 'Del Candil 665-701, Lo Barnechea'
 ```
+
+## License
+
+[MIT](https://tldrlegal.com/license/mit-license)

@@ -1,3 +1,9 @@
+#### 1.2.1 (2016-6-16)
+
+##### Bug Fixes
+
+* **src:** Fix arguments in getAddress ([1aa8ef4b](https://github.com/lgaticaq/simple-reverse-geocoder/commit/1aa8ef4bb4c5550c968c1e8495cc04958430d09c))
+
 ### 1.2.0 (2016-6-16)
 
 ##### Chores

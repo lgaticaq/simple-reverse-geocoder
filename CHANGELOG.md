@@ -1,3 +1,12 @@
+#### 1.2.2 (2016-6-23)
+
+##### Chores
+
+* **package:**
+  * Update dependencies ([2dda0c07](https://github.com/lgaticaq/simple-reverse-geocoder/commit/2dda0c07550cdc66c10d7932bcb86e5738914558))
+  * update eslint to version 2.13.1 ([dfc48190](https://github.com/lgaticaq/simple-reverse-geocoder/commit/dfc48190ace18737b8be5f5cefce8c450ef737e9))
+  * update eslint to version 2.13.0 ([71bc2442](https://github.com/lgaticaq/simple-reverse-geocoder/commit/71bc24420781e3604e0cd54c9e968fb1a56fdd5c))
+
 #### 1.2.1 (2016-6-16)
 
 ##### Bug Fixes

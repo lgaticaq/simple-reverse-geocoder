@@ -1,3 +1,57 @@
+## 2.0.0 (2017-11-24)
+
+##### Chores
+
+* **package:**
+  * remove coveralls and codeclimate scripts ([1d214aaf](https://github.com/lgaticaq/simple-reverse-geocoder/commit/1d214aaf936c7c64d1fc436029736287ad94271b))
+  * update eslint to version 4.0.0 ([e19b1ed9](https://github.com/lgaticaq/simple-reverse-geocoder/commit/e19b1ed97182e3e93c45ada601dc51ce7815056f))
+  * update chai to version 4.0.0 ([65658de1](https://github.com/lgaticaq/simple-reverse-geocoder/commit/65658de1145ad797c19e65b8657f3aefbdcdbd6e))
+  * update codeclimate-test-reporter to version 0.4.0 ([49412ceb](https://github.com/lgaticaq/simple-reverse-geocoder/commit/49412ceb1edaafd18aabba1a8786bef0dff92760))
+  * update eslint to version 3.2.2 ([6a2ced53](https://github.com/lgaticaq/simple-reverse-geocoder/commit/6a2ced53cba4c25b5eba4d0c9c97bf76f064213e))
+  * update mocha to version 3.0.0 ([9769c1ef](https://github.com/lgaticaq/simple-reverse-geocoder/commit/9769c1efbe3f583733b2274e8fa7a207a2bda25b))
+  * update eslint to version 3.0.0 ([70031fca](https://github.com/lgaticaq/simple-reverse-geocoder/commit/70031fcaefd86b005aa332873f4cdbabd1e61bde))
+* **renovate:** move renovate to package.json ([dbb9723c](https://github.com/lgaticaq/simple-reverse-geocoder/commit/dbb9723c47560546fc8f16a98baf81cfb63f7257))
+* **eslint:** move eslint ignore to package.json ([d9a8145f](https://github.com/lgaticaq/simple-reverse-geocoder/commit/d9a8145fa3c884bfbb6bd4ed219ad4f591f4eacc))
+* **deps:**
+  * update dependency generate-changelog to v1.6.0 ([92a166f5](https://github.com/lgaticaq/simple-reverse-geocoder/commit/92a166f5f5cc15cbf80ca1ceed2eb8cbcd834830))
+  * update dependency eslint to v4.11.0 ([f447fb51](https://github.com/lgaticaq/simple-reverse-geocoder/commit/f447fb511887e022703e0150236f85792581c6ab))
+  * update dependency eslint to v4.10.0 ([b80febac](https://github.com/lgaticaq/simple-reverse-geocoder/commit/b80febacc21f4dcc2c43052a01773ccb5034efb9))
+  * update dependency eslint to v4.9.0 ([eba51f8a](https://github.com/lgaticaq/simple-reverse-geocoder/commit/eba51f8ac5b26209228e932de3349952a84e120e))
+  * update dependency mocha to v4.0.1 ([f1cca14a](https://github.com/lgaticaq/simple-reverse-geocoder/commit/f1cca14a83240f6c5d5644db87f03b775ee62079))
+  * update dependency mocha to v4.0.0 ([7aa77c6d](https://github.com/lgaticaq/simple-reverse-geocoder/commit/7aa77c6ddf186356ab8042b2790e93d8b337b095))
+  * update dependency eslint to v4.8.0 ([5e22585b](https://github.com/lgaticaq/simple-reverse-geocoder/commit/5e22585b2b8968c3e258ed044d987c2495176b09))
+  * update dependency coveralls to v3.0.0 ([2e664615](https://github.com/lgaticaq/simple-reverse-geocoder/commit/2e664615b6acced24d0a67f3f7d3281da35f93e5))
+  * update dependency coveralls to v2.13.3 ([b6156d24](https://github.com/lgaticaq/simple-reverse-geocoder/commit/b6156d244258b64607dd99aa564ee85d54489579))
+  * update dependency coveralls to v2.13.2 ([afde04d5](https://github.com/lgaticaq/simple-reverse-geocoder/commit/afde04d54b1ba764587ca2a905933c5541d6d4a9))
+  * update dependency eslint to v4.7.2 ([3573c6ee](https://github.com/lgaticaq/simple-reverse-geocoder/commit/3573c6ee3d44cedf76bcf1e7d89fc832566eecf2))
+  * update dependency generate-changelog to v1.5.0 ([f3eeb0e8](https://github.com/lgaticaq/simple-reverse-geocoder/commit/f3eeb0e8df88c670686b9a82e2715b4f6f34e919))
+  * update dependency eslint to v4.7.0 ([722cbbfe](https://github.com/lgaticaq/simple-reverse-geocoder/commit/722cbbfecc8ff58b6f8b96f575b8a1bfa6fca93d))
+  * update dependency mocha to v3.5.3 ([8d6a11a4](https://github.com/lgaticaq/simple-reverse-geocoder/commit/8d6a11a460b41df95d63d8aad815f213ff559abd))
+  * update dependency mocha to v3.5.2 ([f70b10ef](https://github.com/lgaticaq/simple-reverse-geocoder/commit/f70b10ef2e9e8d34e31aa9e3fff7edd486664c63))
+  * update dependency mocha to v3.5.1 ([6048e9e3](https://github.com/lgaticaq/simple-reverse-geocoder/commit/6048e9e39117afcb7f02fcbe3c22da62d1fa52c9))
+  * update dependency codeclimate-test-reporter to v0.5.0 ([78fd092a](https://github.com/lgaticaq/simple-reverse-geocoder/commit/78fd092a65b0eda7ec76888f94178b05e41326cb))
+
+##### Continuous Integration
+
+* **node:** update node versions ([c2402369](https://github.com/lgaticaq/simple-reverse-geocoder/commit/c240236951e93e87984602947135766627555ecb))
+
+##### Documentation Changes
+
+* **example:** update examples ([14cd95d0](https://github.com/lgaticaq/simple-reverse-geocoder/commit/14cd95d0a85eef4eb8822f039a956aacdee48938))
+
+##### New Features
+
+* **nvm:** update to node v9 ([61cf897e](https://github.com/lgaticaq/simple-reverse-geocoder/commit/61cf897e36fb1f9613e7e4fdd0b87dd1e05a4bbc))
+* **geocoder:** enable set apikey for google ([4e7f505c](https://github.com/lgaticaq/simple-reverse-geocoder/commit/4e7f505ca689207f73f56f64e56716895a22171c))
+
+##### Refactors
+
+* **deps:** renovate pin dependencies packages ([bfc6e274](https://github.com/lgaticaq/simple-reverse-geocoder/commit/bfc6e274968536bfde1af67db5db17608d928b91))
+
+##### Code Style Changes
+
+* **standard:** migrate code to standardjs ([4096225e](https://github.com/lgaticaq/simple-reverse-geocoder/commit/4096225e0a9b812d90e553e11605f36e4cf2bc52))
+
 #### 1.2.2 (2016-6-23)
 
 ##### Chores

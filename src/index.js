@@ -1,27 +1,41 @@
 'use strict';
 
 const nodeGeocoder = require('node-geocoder');
-const Promise = require('bluebird');
+const Redis = require('ioredis');
 
 let client;
 
-const setCache = instance => {
-  client = instance;
-  Promise.promisifyAll(Object.getPrototypeOf(client));
+/**
+ * Set client Redis for cache results
+ * @param  {String} uri Redis connection string. Ex redis://user:pass@host:port/db
+ * @return {Void}
+ */
+const setCache = uri => {
+  client = new Redis(uri);
 };
 
-const getReverse = (lat, lng) => {
-  return new Promise((resolve, reject) => {
-    const geocoderProvider = 'google';
-    const httpAdapter = 'http';
-    const geocoder = nodeGeocoder(geocoderProvider, httpAdapter);
-    geocoder.reverse({lat: lat, lon: lng}).then(res => {
-      if (res.length === 0) resolve(null);
-      resolve(res[0].formattedAddress.split(',').map(x => x.trim()).slice(0, 2).join(', '));
-    }).catch(reject);
+/**
+ * Get address from coordinates
+ * @param  {Number}               lat    Latitude
+ * @param  {Number}               lng    Longitude
+ * @param  {String|Null}          apiKey Google api key
+ * @return {Promise<String|Null>}        Address
+ */
+const getReverse = (lat, lng, apiKey=null) => {
+  const options = {provider: 'google', httpAdapter: 'https'};
+  if (apiKey) options.apiKey = apiKey;
+  const geocoder = nodeGeocoder(options);
+  return geocoder.reverse({lat: lat, lon: lng}).then(res => {
+    if (res.length === 0) return null;
+    return res[0].formattedAddress.split(',').map(x => x.trim()).slice(0, 2).join(', ');
   });
 };
 
+/**
+ * Get latitude and longitude from GeoJson
+ * @param  {Object}          loc GeoJson
+ * @return {Promise<Object>}     Object with latitude and longitude
+ */
 const getCoordinates = loc => {
   return new Promise((resolve, reject) => {
     try {
@@ -34,35 +48,46 @@ const getCoordinates = loc => {
   });
 };
 
-const getFromCache = (lat, lng) => {
-  return new Promise((resolve, reject) => {
-    client.getAsync(`geocoder:${lat}:${lng}`).then(resolve).catch(reject);
+/**
+ * Get address from redis
+ * @param  {Number}               lat Latitude
+ * @param  {Number}               lng Longitude
+ * @return {Promise<String|Null>}     Address
+ */
+const getFromCache = (lat, lng) => client.get(`geocoder:${lat}:${lng}`);
+
+/**
+ * Get address from google or cache if seted
+ * @param  {Object}               loc    GeoJson
+ * @param  {String|Null}          apiKey Google api key
+ * @return {Promise<String|Null>}        Address
+ */
+const getAddress = (loc, apiKey=null) => {
+  return getCoordinates(loc).then(data => {
+    const lng = data.lng;
+    const lat = data.lat;
+    if (!client) return getReverse(lat, lng);
+    return getFromCache(lat, lng).then(reply => {
+      if (reply) return reply;
+      return getReverse(lat, lng, apiKey).then(address => {
+        if (!address) return null;
+        return client.set(`geocoder:${lat}:${lng}`, address).then(() => {
+          return address;
+        });
+      });
+    });
   });
 };
 
-const getAddress = loc => {
-  return new Promise((resolve, reject) => {
-    getCoordinates(loc).then(data => {
-      const lng = data.lng;
-      const lat = data.lat;
-      if (client) {
-        getFromCache(lat, lng).then(reply => {
-          if (reply) resolve(reply);
-          getReverse(lat, lng).then(address => {
-            if (!address) resolve(null);
-            client.set(`geocoder:${lat}:${lng}`, address);
-            resolve(address);
-          }).catch(reject);
-        }).catch(reject);
-      } else {
-        getReverse(lat, lng).then(resolve).catch(reject);
-      }
-    }).catch(reject);
-  });
-};
-
+/**
+ * Clear cache for a loc
+ * @param  {Number}  lat Latitude
+ * @param  {Number}  lng Longitude
+ * @return {Promise}     Redis del command
+ */
 const clearCache = (lat, lng) => {
-  if (client) client.del(`geocoder:${lat}:${lng}`);
+  if (client) return client.del(`geocoder:${lat}:${lng}`);
+  return Promise.resolve();
 };
 
 module.exports = {

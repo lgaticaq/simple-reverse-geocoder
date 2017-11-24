@@ -1,6 +1,6 @@
 {
   "name": "simple-reverse-geocoder",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Get address from a point",
   "main": "src",
   "scripts": {

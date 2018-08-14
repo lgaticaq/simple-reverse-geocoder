@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/lgaticaq/simple-reverse-geocoder#readme",
   "dependencies": {
-    "ioredis": "3.2.2",
+    "ioredis": "4.0.0",
     "node-geocoder": "3.22.0"
   },
   "devDependencies": {

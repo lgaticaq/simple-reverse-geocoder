@@ -2,7 +2,7 @@
 
 const { describe, it, before, after } = require('mocha')
 const { expect } = require('chai')
-const proxyquire = require('proxyquire')
+const mock = require('mock-require')
 
 const nodeGeocoderStub = options => {
   return {
@@ -27,9 +27,7 @@ const nodeGeocoderStub = options => {
   }
 }
 
-proxyquire('../src/index.js', {
-  'node-geocoder': nodeGeocoderStub
-})
+mock('node-geocoder', nodeGeocoderStub)
 
 const rg = require('../src')
 

@@ -6,7 +6,6 @@
   "scripts": {
     "lint": "eslint . --fix",
     "format": "prettier-standard 'src/**/*.js' 'test/**/*.js'",
-    "precommit": "lint-staged",
     "commit": "commit",
     "pretest": "npm run lint -s && npm run format -s",
     "test": "nyc --reporter=html --reporter=text mocha --exit --no-timeouts",
@@ -48,7 +47,7 @@
     "eslint-plugin-node": "7.0.1",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-standard": "4.0.0",
-    "husky": "0.14.3",
+    "husky": "1.0.0-rc.14",
     "lint-staged": "7.3.0",
     "mocha": "5.2.0",
     "npm-github-config": "2.0.0",
@@ -70,17 +69,25 @@
     "coverage",
     "example.js"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "lint-staged": {
-    "src/**/*.js": [
-      "eslint --fix",
-      "prettier-standard",
-      "git add"
-    ],
-    "test/**/*.js": [
-      "eslint --fix",
-      "prettier-standard",
-      "git add"
-    ]
+    "linters": {
+      "src/**/*.js": [
+        "eslint --fix",
+        "prettier-standard",
+        "git add"
+      ],
+      "test/**/*.js": [
+        "eslint --fix",
+        "prettier-standard",
+        "git add"
+      ]
+    }
   },
   "tonicExampleFilename": "example.js",
   "commitlint": {

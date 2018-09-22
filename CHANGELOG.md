@@ -1,3 +1,13 @@
+## [2.0.1](https://github.com/lgaticaq/simple-reverse-geocoder/compare/v2.0.0...v2.0.1) (2018-09-22)
+
+
+### Bug Fixes
+
+* **deps:** fix vulnerabilities ([31c8524](https://github.com/lgaticaq/simple-reverse-geocoder/commit/31c8524))
+* **deps:** update dependency ioredis to v3.2.2 ([84df78a](https://github.com/lgaticaq/simple-reverse-geocoder/commit/84df78a))
+* **deps:** update dependency ioredis to v4 ([d0198b5](https://github.com/lgaticaq/simple-reverse-geocoder/commit/d0198b5))
+* **deps:** update dependency node-geocoder to v3.22.0 ([1bcf3e5](https://github.com/lgaticaq/simple-reverse-geocoder/commit/1bcf3e5))
+
 ## 2.0.0 (2017-11-24)
 
 ##### Chores

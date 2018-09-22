@@ -1,12 +1,12 @@
 # simple-reverse-geocoder
 
-[![npm version](https://img.shields.io/npm/v/simple-reverse-geocoder.svg?style=flat-square)](https://www.npmjs.com/package/simple-reverse-geocoder)
-[![npm downloads](https://img.shields.io/npm/dm/simple-reverse-geocoder.svg?style=flat-square)](https://www.npmjs.com/package/simple-reverse-geocoder)
-[![Build Status](https://img.shields.io/travis/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://travis-ci.org/lgaticaq/simple-reverse-geocoder)
-[![Coverage Status](https://img.shields.io/coveralls/lgaticaq/simple-reverse-geocoder/master.svg?style=flat-square)](https://coveralls.io/github/lgaticaq/simple-reverse-geocoder?branch=master)
+[![npm version](https://img.shields.io/npm/v/simple-reverse-geocoder.svg)](https://www.npmjs.com/package/simple-reverse-geocoder)
+[![npm downloads](https://img.shields.io/npm/dm/simple-reverse-geocoder.svg)](https://www.npmjs.com/package/simple-reverse-geocoder)
+[![Build Status](https://img.shields.io/travis/lgaticaq/simple-reverse-geocoder.svg)](https://travis-ci.org/lgaticaq/simple-reverse-geocoder)
+[![Coverage Status](https://img.shields.io/coveralls/lgaticaq/simple-reverse-geocoder/master.svg)](https://coveralls.io/github/lgaticaq/simple-reverse-geocoder?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e70514e8e89c182b301d/maintainability)](https://codeclimate.com/github/lgaticaq/simple-reverse-geocoder/maintainability)
-[![dependency Status](https://img.shields.io/david/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://david-dm.org/lgaticaq/simple-reverse-geocoder#info=dependencies)
-[![devDependency Status](https://img.shields.io/david/dev/lgaticaq/simple-reverse-geocoder.svg?style=flat-square)](https://david-dm.org/lgaticaq/simple-reverse-geocoder#info=devDependencies)
+[![dependency Status](https://img.shields.io/david/lgaticaq/simple-reverse-geocoder.svg)](https://david-dm.org/lgaticaq/simple-reverse-geocoder#info=dependencies)
+[![devDependency Status](https://img.shields.io/david/dev/lgaticaq/simple-reverse-geocoder.svg)](https://david-dm.org/lgaticaq/simple-reverse-geocoder#info=devDependencies)
 
 > Get address from a point
 

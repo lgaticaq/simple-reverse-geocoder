@@ -8,7 +8,7 @@
     "format": "prettier-standard 'src/**/*.js' 'test/**/*.js'",
     "precommit": "lint-staged",
     "pretest": "npm run lint -s && npm run format -s",
-    "test": "mocha --exit"
+    "test": "nyc --reporter=html --reporter=text mocha --exit --no-timeouts"
   },
   "engines": {
     "node": ">=8"
@@ -42,6 +42,7 @@
     "husky": "0.14.3",
     "lint-staged": "7.3.0",
     "mocha": "5.2.0",
+    "nyc": "13.0.1",
     "prettier-standard": "8.0.1",
     "proxyquire": "2.1.0"
   },

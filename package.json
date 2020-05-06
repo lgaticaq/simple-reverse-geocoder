@@ -10,7 +10,9 @@
     "pretest": "npm run lint -s && npm run format -s",
     "test": "nyc --reporter=html --reporter=text mocha --exit --no-timeouts",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=8"
@@ -31,7 +33,8 @@
   "homepage": "https://github.com/lgaticaq/simple-reverse-geocoder#readme",
   "dependencies": {
     "ioredis": "^4.0.0",
-    "node-geocoder": "^3.22.0"
+    "node-geocoder": "^3.22.0",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "@commitlint/cli": "7.6.1",
@@ -103,5 +106,6 @@
   },
   "release": {
     "extends": "npm-github-config"
-  }
+  },
+  "snyk": true
 }

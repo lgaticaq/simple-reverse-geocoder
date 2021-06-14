@@ -52,7 +52,7 @@
     "mocha": "5.2.0",
     "mock-require": "3.0.3",
     "npm-github-config": "2.0.1",
-    "nyc": "13.3.0",
+    "nyc": "15.1.0",
     "prettier-standard": "8.0.1",
     "semantic-release": "15.14.0",
     "travis-deploy-once": "5.0.11"
